@@ -10,7 +10,7 @@ executable (much faster than `cargo install trunk`, seconds vs minutes).
 ## Usage
 
 ```yaml
-- uses: a-skua/fork-trunk-action@v0.5.1
+- uses: a-skua/trunk-action@0.5.1
   with:
     # Optional version of trunk to install(eg. 'v0.19.1', 'latest')
     version: 'latest'
