@@ -1,8 +1,8 @@
-name: 'trunk-action'
+name: fork-trunk-action
 description:
   'Install Trunk by downloading the executable (much faster than cargo install
   trunk, seconds vs minutes).'
-author: 'jetli'
+author: asuka
 inputs:
   version:
     description:
