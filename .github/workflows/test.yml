@@ -6,23 +6,25 @@ on: # rebuild any PRs and main branch changes
       - main
       - 'releases/*'
 
+permissions:
+  contents: read
+
 jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: |
-          npm install
-          npm run all
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run all
   test: # make sure the action works on a clean machine without building
     strategy:
       matrix:
         runs-on: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.runs-on }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - uses: ./
         with:
-          version: v0.10.0
+          version: v0.21.8
       - run: |
           trunk --version
